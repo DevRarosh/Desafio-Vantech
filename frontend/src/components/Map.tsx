@@ -3,6 +3,7 @@ import { MapContainer, TileLayer, Marker, Polyline } from 'react-leaflet';
 import { LatLngTuple } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
+import './Maps.css'
 
 
 const startPosition: LatLngTuple = [-3.768319, -38.537734]; 
@@ -40,6 +41,7 @@ const Map: React.FC = () => {
   }, []);
 
   return (
+    <div className="Map">
       <MapContainer center={startPosition} zoom={15} style={{ height: '400px', width: '400px' }}>
           <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -49,6 +51,7 @@ const Map: React.FC = () => {
           <Marker position={endPosition} />
           {route.length > 0 && <Polyline positions={route} color="blue" />}
       </MapContainer>
+    </div>
   );
 };
 export default Map;
