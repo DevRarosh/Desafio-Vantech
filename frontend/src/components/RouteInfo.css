@@ -1,0 +1,41 @@
+.route-info {
+    position: absolute; /* Posiciona o popup em relação ao seu contêiner pai */
+    top: 15%; /* Ajuste conforme necessário */
+    left: 65%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -20%); /* Centraliza o popup */
+    background-color: white; /* Cor de fundo do popup */
+    border: 1px solid #ccc; /* Borda do popup */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra do popup */
+    padding: 1rem; /* Espaçamento interno usando unidades relativas */
+    z-index: 10; /* Garante que o popup fique acima do mapa */
+    opacity: 0; /* Inicialmente invisível */
+    transform: translate(-50%, -20px); /* Move o popup para fora da tela */
+    animation: fadeIn 0.5s forwards; /* Animação ao aparecer */
+    border-radius: 10px;
+}
+
+/* Definindo a animação */
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* Torna o elemento visível */
+        transform: translate(-50%, -20%); /* Move para a posição original */
+    }
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .route-info {
+        top: 10%; /* Ajuste para telas menores */
+        left: 50%; /* Mantém o centro */
+        transform: translate(-50%, -10%); /* Ajusta a posição vertical */
+        padding: 10px; /* Menos espaçamento em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .route-info {
+        top: 5%; /* Ajuste para telas muito pequenas */
+        padding: 8px; /* Menos espaçamento em telas muito pequenas */
+        font-size: 0.9rem; /* Ajuste no tamanho da fonte */
+    }
+}
