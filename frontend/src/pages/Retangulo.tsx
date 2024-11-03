@@ -1,5 +1,6 @@
 import React from 'react';
 import './Retangulo.css'
+import '../Navbar/Navbar.css'
 
 interface RectangularComponentProps {
   width?: string;
@@ -17,6 +18,7 @@ const RectangularComponent: React.FC<RectangularComponentProps> = ({
 
   return (
     <div className='Retangulo' >
+      <div className='navbar'></div>
     </div>
   );
 };

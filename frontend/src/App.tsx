@@ -1,9 +1,9 @@
-// App.tsx
 import React, { useState } from 'react';
 import './App.css';
 import Map from './components/Map';
 import RectangularComponent from './pages/Retangulo';
 import RouteInfo from './components/RouteInfo';
+
 
 function App() {
   const [distance, setDistance] = useState<number | null>(null);
@@ -17,10 +17,10 @@ function App() {
   };
 
   return (
-    <div>
-      <Map setRouteInfo={setRouteInfo} /> {/* Passe a função para Map */}
-      <RouteInfo distance={distance} duration={duration} loading={loading} /> {/* Renderize RouteInfo */}
-      <div>
+    <div className="App">
+      <div className="content">
+        <Map setRouteInfo={setRouteInfo} /> {}
+        <RouteInfo distance={distance} duration={duration} loading={loading} /> {/* Renderize RouteInfo */}
         <RectangularComponent />
       </div>
     </div>
